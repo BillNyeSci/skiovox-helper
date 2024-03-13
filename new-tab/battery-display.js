@@ -40,13 +40,6 @@ class BatteryDisplay {
         if (battery.level == 1 && battery.charging) {
             return ""
         }
-        if (battery.level == .69) {
-            this.batterySlider.style.color = "cyan"
-        }
-        else {
-            this.batterySlider.style.color = `rgb(${Math.min(2 - (battery.level * 2), 1) * 255}, ${Math.min((battery.level * 2), 1) * 255}, 0)`
-        }
-        return `${"█".repeat(Math.round(battery.level * 25))}${"▒".repeat(25-Math.round(battery.level * 25))}`
     }
 
     getTimeMessage(battery) {
